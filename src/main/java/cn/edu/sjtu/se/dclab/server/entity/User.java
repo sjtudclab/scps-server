@@ -1,4 +1,4 @@
-package cn.edu.sjtu.se.dclab.server.mapper;
+package cn.edu.sjtu.se.dclab.server.entity;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;

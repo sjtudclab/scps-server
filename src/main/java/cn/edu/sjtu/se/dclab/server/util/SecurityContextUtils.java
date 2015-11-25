@@ -3,7 +3,7 @@ package cn.edu.sjtu.se.dclab.server.util;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import cn.edu.sjtu.se.dclab.server.mapper.User;
+import cn.edu.sjtu.se.dclab.server.entity.User;
 
 /**
  *2014年12月27日 上午9:59:47

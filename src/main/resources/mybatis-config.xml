@@ -6,6 +6,6 @@
     
     <typeAliases>
 
-        <typeAlias alias="User" type="cn.edu.sjtu.se.dclab.server.mapper.User" />
+        <typeAlias alias="User" type="cn.edu.sjtu.se.dclab.server.entity.User" />
     </typeAliases>
 </configuration>  

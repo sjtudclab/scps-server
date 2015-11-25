@@ -76,8 +76,6 @@
 	<!-- RESOURCE FOLDERS CONFIGURATION -->
 	<!-- Dispatcher configuration for serving static resources -->
 	<!-- **************************************************************** -->
-<!-- 	<mvc:resources location="/WEB-INF/images/" mapping="/images/**" />
-	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
-	<mvc:resources location="/WEB-INF/login.html" mapping="/login.html"/>
- -->
+ 	<mvc:resources location="/WEB-INF/statics/" mapping="/statics/**" />
+	<mvc:resources location="/WEB-INF/scps-server/" mapping="/scps-server/**"/>
 </beans>
