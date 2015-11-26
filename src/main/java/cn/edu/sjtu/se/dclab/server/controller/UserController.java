@@ -6,6 +6,7 @@ import cn.edu.sjtu.se.dclab.server.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,18 @@ public class UserController {
     public String login(HttpServletRequest request) {
         request.getSession().setAttribute("name", "li");
         return "success";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String login(@RequestBody User user, Model model) {
+        User u = userService.checkUser(user);
+        if (u != null) {
+            model.addAttribute(user);
+            return Result.SUCCESS;
+        } else {
+            return "";
+        }
     }
 
     @ResponseBody

@@ -16,6 +16,7 @@
         (#{username}, #{password}, #{salt}, #{name}, #{status}, #{enabled},
         #{note},#{email}, #{image});
     </insert>
+    
     <resultMap id="UserMap" type="User">
         <id property="id" column="user_id" />
         <result property="username" column="username" />
