@@ -15,6 +15,7 @@ $(function(){
             contentType: "application/json",
             success: function() {
                 console.log('Redirect to Login');
+                window.location.href="login.html";
             },
             error: function(error) {
                 console.log('Oops');

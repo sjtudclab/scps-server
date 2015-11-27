@@ -13,6 +13,7 @@ $(function(){
             contentType: "application/json",
             success: function() {
                 console.log('Redirect to homepage');
+                window.location.href="base.html";
             },
             error: function(error) {
                 console.log('Oops');
