@@ -2,7 +2,7 @@ $(function(){
     function loginAm() {
 	 $.ajax({
                 type: "POST",
-                url: "http://192.168.1.111/ambari",
+                url: "http://192.168.1.112/ambari",
                 async: false,
                 beforeSend: function(xhr){
                         xhr.setRequestHeader("Authorization",btoa("admin:admin"));
