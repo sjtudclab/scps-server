@@ -11,6 +11,7 @@
     <script src="../statics/js/login.js"></script>
     <script src="../statics/js/base.js"></script>
     <script src="../statics/js/resourceManage.js"></script>
+    <script src="../statics/js/coordinate.js"></script>
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- TITLE -->
     <title th:include="this::#th_title">主页</title>
@@ -88,7 +89,7 @@
 
         <!--CONTENT_CONTAINER-->
         <div class="col-md-offset-2" style="height:940px">
-            <div class="container serviceAutoExpand2" >
+            <div class="container serviceAutoExpand2 expand" >
                 <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info" >
                         <div class="panel-heading">
@@ -265,7 +266,7 @@
 
                 </div>
             </div>
-            <div class="container serviceAutoExpand3" >
+            <div class="container serviceAutoExpand3 expand" >
                 <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info" >
                         <div class="panel-heading">
@@ -370,10 +371,296 @@
                     </div>
                 </div>
             </div>
+            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" id='amIframe' class="serviceAutoExpand1 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+            <!--<iframe src="" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"  class="serviceAutoExpand4 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+            <div class="container serviceAutoExpand5 expand" >
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">资源管理服务能力阈值设置</div>
+                        </div>
 
-            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" id='amIframe' class="serviceAutoExpand1">
-	    <p>Your browser does not support iframes.</p>
-	  </iframe>
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <form id="loginform" class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">内存阈值</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">%</span>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">负载阈值</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">%</span>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">阈值采样周期</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">秒</span>
+                                </div>
+
+
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">资源管理服务能力扩展方案</div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none"  class="alert alert-danger col-sm-12"></div>
+
+                            <form  class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">扩展节点数目</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">扩展节点时限</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">分</span>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">选择虚拟机</span>
+                                    <div class="bs-example" data-example-id="single-button-dropdown">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.111
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div id="signupbox" style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Sign Up</div>
+                            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+                        </div>
+                        <div class="panel-body" >
+                            <form id="signupform" class="form-horizontal" role="form">
+
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="firstname" class="col-md-3 control-label">First Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="passwd" placeholder="Password">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="icode" class="col-md-3 control-label">Invitation Code</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="icode" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                        <span style="margin-left:8px;">or</span>
+                                    </div>
+                                </div>
+
+                                <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
+
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                                    </div>
+
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="container serviceAutoExpand6 expand" >
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">资源管理服务能力手动扩展方案</div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none"  class="alert alert-danger col-sm-12"></div>
+
+                            <form  class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">扩展节点数量</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">确定节点类型选择虚拟机</span>
+                                    <div class="bs-example" data-example-id="single-button-dropdown">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.111
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.112
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.112
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            -->
+
         </div><!-- content_container -->
 
     </div><!--row-->
