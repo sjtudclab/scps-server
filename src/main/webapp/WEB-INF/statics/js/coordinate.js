@@ -16,5 +16,4 @@ $(function() {
         $('.expand').hide();
         $('.serviceAutoExpand6').show();
     })
-    $('#coordinateService1').click();
 })

@@ -12,6 +12,7 @@
     <script src="../statics/js/base.js"></script>
     <script src="../statics/js/resourceManage.js"></script>
     <script src="../statics/js/coordinate.js"></script>
+    <script src="../statics/js/messageQueue.js"></script>
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- TITLE -->
     <title th:include="this::#th_title">主页</title>
@@ -89,6 +90,9 @@
 
         <!--CONTENT_CONTAINER-->
         <div class="col-md-offset-2" style="height:940px">
+            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" id='amIframe' class="serviceAutoExpand1 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
             <div class="container serviceAutoExpand2 expand" >
                 <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info" >
@@ -371,24 +375,22 @@
                     </div>
                 </div>
             </div>
-            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%" id='amIframe' class="serviceAutoExpand1 expand">
-                <p>Your browser does not support iframes.</p>
-            </iframe>
-            <!--<iframe src="" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"  class="serviceAutoExpand4 expand">
+
+            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"  class="serviceAutoExpand4 expand">
                 <p>Your browser does not support iframes.</p>
             </iframe>
             <div class="container serviceAutoExpand5 expand" >
                 <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info" >
                         <div class="panel-heading">
-                            <div class="panel-title" style="text-align: center;">资源管理服务能力阈值设置</div>
+                            <div class="panel-title" style="text-align: center;">协调服务能力阈值设置</div>
                         </div>
 
                         <div style="padding-top:30px" class="panel-body" >
 
-                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            <div style="display:none"  class="alert alert-danger col-sm-12"></div>
 
-                            <form id="loginform" class="form-horizontal" role="form">
+                            <form  class="form-horizontal" role="form">
 
                                 <div class="input-group" style="margin-bottom: 10px;">
                                     <span class="input-group-addon">内存阈值</span>
@@ -419,7 +421,7 @@
                 <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                     <div class="panel panel-info" >
                         <div class="panel-heading">
-                            <div class="panel-title" style="text-align: center;">资源管理服务能力扩展方案</div>
+                            <div class="panel-title" style="text-align: center;">协调服务能力扩展方案</div>
                         </div>
 
                         <div style="padding-top:30px" class="panel-body" >
@@ -659,7 +661,274 @@
                     </div>
                 </div>
             </div>
-            -->
+
+            <!-- Then redis service-->
+            <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"  class="serviceAutoExpand10 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+            <div class="container serviceAutoExpand11 expand" >
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">消息队列服务能力阈值设置</div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                            <form id="loginform" class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">内存阈值</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">%</span>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">负载阈值</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <span class="input-group-addon">%</span>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">socket连接数目</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">就绪消息数</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">总消息数</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">文件描述符数目</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">Erlang进程数目</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">消息队列服务能力扩展方案</div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none"  class="alert alert-danger col-sm-12"></div>
+
+                            <form  class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">扩展节点数目</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">确定节点类型和选择虚拟机</span>
+                                    <div class="bs-example" data-example-id="single-button-dropdown">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">磁盘节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.111
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">磁盘节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.112
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">内存节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.113
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container serviceAutoExpand12 expand" >
+                <div style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info" >
+                        <div class="panel-heading">
+                            <div class="panel-title" style="text-align: center;">资源管理服务能力手动扩展方案</div>
+                        </div>
+
+                        <div style="padding-top:30px" class="panel-body" >
+
+                            <div style="display:none"  class="alert alert-danger col-sm-12"></div>
+
+                            <form  class="form-horizontal" role="form">
+
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">扩展节点数量</span>
+                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                </div>
+                                <div class="input-group" style="margin-bottom: 10px;">
+                                    <span class="input-group-addon">确定节点类型选择虚拟机</span>
+                                    <div class="bs-example" data-example-id="single-button-dropdown">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.111
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.112
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <br>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">从节点
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">192.168.1.112
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li role="separator" class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </form>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div><!-- content_container -->
 
