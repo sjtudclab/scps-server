@@ -16,6 +16,13 @@
     <script src="../statics/js/messageQueue.js"></script>
     <script src="../statics/js/storeService.js"></script>
     <script src="../statics/js/streamCalService.js"></script>
+    <script>
+        $(function() {
+            $('.dropdown-menu li > a').on('click', function() {
+                $(this).parent().parent().parent().children(":first").text($(this).text())
+            });
+        })
+    </script>
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- TITLE -->
     <title th:include="this::#th_title">主页</title>
