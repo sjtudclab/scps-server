@@ -7,5 +7,6 @@
     <typeAliases>
 
         <typeAlias alias="User" type="cn.edu.sjtu.se.dclab.server.entity.User" />
+        <typeAlias alias="Expand" type="cn.edu.sjtu.se.dclab.server.entity.Expand" />
     </typeAliases>
 </configuration>  

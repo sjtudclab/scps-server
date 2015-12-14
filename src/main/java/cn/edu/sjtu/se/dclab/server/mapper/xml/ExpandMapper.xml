@@ -1,0 +1,28 @@
+<?mybatis version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.sjtu.se.dclab.server.mapper.ExpandMapper">
+
+    <select id="getExpand" resultMap="ExpandMap">
+        SELECT * FROM service_extend
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateExpand">
+        UPDATE service_extend
+        SET threshold_setting = #{threshold_setting},
+        schema_setting_auto = #{schema_setting_auto},
+        schema_setting_manual = #{schema_setting_manual}
+        WHERE id = #{id}
+    </update>
+
+    <resultMap id="ExpandMap" type="Expand">
+        <id property="id" column="id" />
+        <result property="threshold_setting" column="threshold_setting" />
+        <result property="schema_setting_auto" column="schema_setting_auto" />
+        <result property="schema_setting_manual" column="schema_setting_manual" />
+        <result property="service_type" column="service_type" />
+    </resultMap>
+
+</mapper>
