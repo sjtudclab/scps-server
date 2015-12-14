@@ -4,7 +4,8 @@
 $(function() {
     $('#coordinateService1').on('click', function() {
         $('.expand').hide();
-        $('.serviceAutoExpand4').show();
+        $('.serviceAutoExpand1').show();
+        $('#amIframe').contents().find('.ember-view.nav.nav-list.nav-services li:nth-child(4) span').click();
     })
 
     $('#coordinateService2').on('click', function() {
