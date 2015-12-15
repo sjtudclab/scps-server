@@ -2,15 +2,8 @@
  * Created by Kevin on 12/10/2015.
  */
 $(function() {
-    $('#resourceManageService1').on('click', function() {
-        $('.expand').hide();
-        $('.serviceAutoExpand1').show();
-        $('#amIframe').contents().find('.ember-view.nav.nav-list.nav-services li:nth-child(3) span').click();
-    })
 
-    $('#resourceManageService2').on('click', function() {
-        $('.expand').hide();
-        $('.serviceAutoExpand2').show();
+    function getExpands() {
         $.ajax({
             type: "GET",
             url: "/getExpand/1",
@@ -29,11 +22,6 @@ $(function() {
                 $('.serviceAutoExpand2 .bs-example .dropdown-menu:eq(1) li a:eq(' + schema_setting_auto.vm[1] + ')').click()
             }
         });
-    })
-
-    $('#resourceManageService3').on('click', function() {
-        $('.expand').hide();
-        $('.serviceAutoExpand3').show();
         $.ajax({
             type: "GET",
             url: "/getExpand/1",
@@ -49,9 +37,10 @@ $(function() {
                 $('.serviceAutoExpand3 .bs-example .dropdown-menu:eq(5) li a:eq(' + schema_setting_manual.vm[5] + ')').click();
             }
         });
-    })
+    }
+    getExpands();
 
-    $('#serviceAutoExpand2Save').on('click', function() {
+    function updateExpands() {
         var data = {};
         var threshold_setting = {};
         var schema_setting_auto = {};
@@ -79,8 +68,31 @@ $(function() {
                 console.log(e);
             }
         });
+    }
+    
+
+    $('#resourceManageService1').on('click', function() {
+        $('.expand').hide();
+        $('.serviceAutoExpand1').show();
+        $('#amIframe').contents().find('.ember-view.nav.nav-list.nav-services li:nth-child(3) span').click();
+    })
+
+    $('#resourceManageService2').on('click', function() {
+        $('.expand').hide();
+        $('.serviceAutoExpand2').show();
+
+    })
+
+    $('#resourceManageService3').on('click', function() {
+        $('.expand').hide();
+        $('.serviceAutoExpand3').show();
+    })
+
+    $('#serviceAutoExpand2Save').on('click', function() {
+        updateExpands();
     });
 
     $('#resourceManageService1').click();
+
 
 })
