@@ -50,6 +50,37 @@ $(function() {
             }
         });
     })
+
+    $('#serviceAutoExpand2Save').on('click', function() {
+        var data = {};
+        var threshold_setting = {};
+        var schema_setting_auto = {};
+
+        threshold_setting.memory = $('.serviceAutoExpand2 .form-control:eq(0)').val();
+        threshold_setting.workload = $('.serviceAutoExpand2 .form-control:eq(1)').val();
+        threshold_setting.interval = $('.serviceAutoExpand2 .form-control:eq(2)').val();
+
+        schema_setting_auto.nodeNum = $('.serviceAutoExpand2 .form-control:eq(3)').val();
+        schema_setting_auto.nodeTime = $('.serviceAutoExpand2 .form-control:eq(4)').val();
+
+        data.threshold_setting =  JSON.stringify(threshold_setting);
+        data.schema_setting_auto =  JSON.stringify(schema_setting_auto);
+        data.id = 1;
+
+        $.ajax({
+            type: "POST",
+            url: '/updateExpand',
+            data: JSON.stringify(data),
+            contentType: "application/json; charset=utf-8",
+            success: function() {
+
+            },
+            error: function(e) {
+                console.log(e);
+            }
+        });
+    });
+
     $('#resourceManageService1').click();
 
 })
