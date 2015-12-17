@@ -5,7 +5,7 @@ $(function() {
     function getExpands() {
         $.ajax({
             type: "GET",
-            url: "/getExpand/2",
+            url: SCPS_SERVER_BASE_URL + "/getExpand/2",
             cache: false,
             success: function(data){
                 var threshold_setting=$.parseJSON(data.threshold_setting);
@@ -82,7 +82,7 @@ $(function() {
 
         $.ajax({
             type: "POST",
-            url: '/updateExpand',
+            url: SCPS_SERVER_BASE_URL +'/updateExpand',
             data: JSON.stringify(data),
             contentType: "application/json; charset=utf-8",
             success: function() {
