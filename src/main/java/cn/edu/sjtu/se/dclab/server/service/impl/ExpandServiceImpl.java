@@ -34,13 +34,13 @@ public class ExpandServiceImpl implements ExpandService {
 
     @Override
     public void expand() {
-        try {
+        /*try {
             Process p = Runtime.getRuntime().exec(script);
             readBuffer(p.getInputStream(), p.getErrorStream());
                 p.waitFor();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     private void readBuffer(final InputStream input, final InputStream error) {
