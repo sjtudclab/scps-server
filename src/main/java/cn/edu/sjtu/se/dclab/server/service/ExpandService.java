@@ -8,4 +8,5 @@ import cn.edu.sjtu.se.dclab.server.entity.Expand;
 public interface ExpandService {
     public boolean updateExpand(Expand expand);
     public Expand getExpand(int id, int service_type);
+    public void expand();
 }
