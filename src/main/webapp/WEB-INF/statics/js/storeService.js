@@ -99,7 +99,7 @@ $(function() {
 
     $('#storeService1').on('click', function() {
         $('.expand').hide();
-        $('.serviceAutoExpand7').show();
+        $('.serviceAutoExpand13').show();
         $('#amIframe').contents().find('.ember-view.nav.nav-list.nav-services li:nth-child(3) span').click();
     })
 
