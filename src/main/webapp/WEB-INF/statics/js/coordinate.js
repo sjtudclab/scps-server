@@ -114,4 +114,26 @@ $(function() {
         $('.expand').hide();
         $('.serviceAutoExpand6').show();
     })
+
+    $('#tmp1').on('click', function(){
+        $('.expand').hide();
+        $('.serviceAutoExpand6').hide();
+        $('.serviceAutoExpand01').show();
+        $('.serviceAutoExpand02').hide();
+        $('.serviceAutoExpand03').hide();
+    })
+    $('#tmp2').on('click', function(){
+        $('.expand').hide();
+        $('.serviceAutoExpand6').hide();
+        $('.serviceAutoExpand01').hide();
+        $('.serviceAutoExpand02').show();
+        $('.serviceAutoExpand03').hide();
+    })
+    $('#tmp3').on('click', function(){
+        $('.expand').hide();
+        $('.serviceAutoExpand6').hide();
+        $('.serviceAutoExpand01').hide();
+        $('.serviceAutoExpand02').hide();
+        $('.serviceAutoExpand03').show();
+    })
 })

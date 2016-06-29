@@ -63,6 +63,12 @@
         <!--SIDE_BAR-->
         <div id="th_sidebar" class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
+                <li><h4 id='tmpfor615' class="sub-header">持续集成开发环境</h4></li>
+                <li id="tmp1"><a href="#">gitlab</a></li>
+                <li id="tmp2"><a href="#">SPL system</a></li>
+                <li id="tmp3"><a href="#">镜像中心</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
                 <li><h4 id='deploy' class="sub-header">资源管理服务</h4></li>
                 <li id="resourceManageService1"><a href="#">服务运行状态监测</a></li>
                 <li id="resourceManageService2"><a href="#">服务能力自动扩展</a></li>
@@ -103,6 +109,21 @@
         <!--CONTENT_CONTAINER-->
         <div class="col-md-offset-2" style="height:940px">
             <!-- resource manage service-->
+            <iframe src="http://192.168.0.156:82" frameborder="0" style="overflow:hidden;height:100%;width:100%"
+                    height="100%" width="100%" id='amIframe' class="serviceAutoExpand01 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+
+            <iframe src="http://192.168.0.156:8081/Gitlab-webapp/WebContent/" frameborder="0" style="overflow:hidden;height:100%;width:100%"
+                    height="100%" width="100%" id='amIframe' class="serviceAutoExpand02 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+
+            <iframe src="http://192.168.0.156:8181/repository/index" frameborder="0" style="overflow:hidden;height:100%;width:100%"
+                    height="100%" width="100%" id='amIframe' class="serviceAutoExpand03 expand">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+
             <iframe src="http://192.168.1.112" frameborder="0" style="overflow:hidden;height:100%;width:100%"
                     height="100%" width="100%" id='amIframe' class="serviceAutoExpand1 expand">
                 <p>Your browser does not support iframes.</p>
