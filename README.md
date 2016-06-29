@@ -14,3 +14,10 @@ tomcat
 
 #database
 mysql
+
+# how to dev
+`mvn clean`
+
+`mvn install -Dmaven.skip.test=true`
+
+`mvn package`
